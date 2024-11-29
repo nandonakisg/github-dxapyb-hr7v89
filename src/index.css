@@ -5,21 +5,26 @@
 @layer base {
   html {
     font-size: 24px;
+    height: 100%;
+    background: black;
   }
   
   body {
     @apply bg-[#0f1623];
-    aspect-ratio: 16/9;
+    width: 1920px;
+    height: 1080px;
+    margin: 0 auto;
     overflow: hidden;
+    position: relative;
   }
 }
 
 .status-active {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#d1fae5] text-[#065f46];
+  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#d1fae5] text-[#065f46] shadow-sm;
 }
 
 .status-inactive {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#fee2e2] text-[#991b1b];
+  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#fee2e2] text-[#991b1b] shadow-sm;
 }
 
 .data-table {
@@ -27,7 +32,7 @@
 }
 
 .data-table th {
-  @apply bg-[#1a2332] text-slate-200 px-4 py-2 text-left text-lg font-semibold sticky top-0;
+  @apply bg-[#1a2332]/80 text-slate-200 px-4 py-2 text-left text-lg font-semibold backdrop-blur-sm;
 }
 
 .data-table td {
@@ -47,40 +52,39 @@
 }
 
 .dashboard-container {
-  height: 100vh;
+  width: 1920px;
+  height: 1080px;
   display: grid;
-  grid-template-rows: auto 1fr;
-  overflow: hidden;
+  grid-template-rows: 80px 1fr;
 }
 
 .dashboard-content {
-  overflow: hidden;
   display: grid;
-  grid-template-rows: auto 1fr;
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-rows: 120px 1fr;
+  gap: 24px;
+  padding: 24px;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  gap: 24px;
+  height: 120px;
 }
 
 .main-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 1rem;
-  overflow: hidden;
+  gap: 24px;
+  height: calc(1080px - 280px);
 }
 
 .table-container {
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
 
 .table-scroll {
-  overflow-y: auto;
-  flex: 1;
+  height: 100%;
+  overflow: hidden;
 }

@@ -1,5 +1,7 @@
 import React from 'react';
 import { formatDecimal } from '../utils/formatters';
+import { Card } from './ui/Card';
+import { CardHeader } from './ui/CardHeader';
 
 interface Picker {
   id: number;
@@ -21,11 +23,13 @@ interface PickerTableProps {
 }
 
 export function PickerTable({ pickers, grandTotal }: PickerTableProps) {
+  const visiblePickers = pickers.slice(0, 12); // Show only first 12 pickers
+
   return (
-    <div className="table-container bg-[#1a2332] rounded-xl">
-      <div className="p-3 border-b border-[#2a3444]">
+    <Card gradient className="table-container">
+      <CardHeader className="py-4 px-6">
         <h2 className="text-2xl font-bold text-white">Picker Status</h2>
-      </div>
+      </CardHeader>
       <div className="table-scroll">
         <table className="data-table">
           <thead>
@@ -46,7 +50,7 @@ export function PickerTable({ pickers, grandTotal }: PickerTableProps) {
               <td className="text-right">{formatDecimal(grandTotal.hoursActive)}</td>
               <td className="text-right">-</td>
             </tr>
-            {pickers.map((picker) => (
+            {visiblePickers.map((picker) => (
               <tr key={picker.id}>
                 <td>
                   <span className={picker.active ? 'status-active' : 'status-inactive'}>
@@ -63,6 +67,6 @@ export function PickerTable({ pickers, grandTotal }: PickerTableProps) {
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 }

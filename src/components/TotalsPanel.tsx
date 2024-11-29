@@ -1,5 +1,7 @@
 import React from 'react';
 import { formatDecimal } from '../utils/formatters';
+import { Card } from './ui/Card';
+import { CardHeader } from './ui/CardHeader';
 
 interface ShiftData {
   shift: string;
@@ -21,10 +23,10 @@ interface TotalsPanelProps {
 
 export function TotalsPanel({ shifts, grandTotal }: TotalsPanelProps) {
   return (
-    <div className="bg-[#1a2332] rounded-xl overflow-hidden">
-      <div className="p-6 border-b border-[#2a3444]">
+    <Card gradient>
+      <CardHeader>
         <h2 className="text-3xl font-bold text-white">Shift Totals</h2>
-      </div>
+      </CardHeader>
       <div className="overflow-x-auto">
         <table className="data-table">
           <thead>
@@ -56,6 +58,6 @@ export function TotalsPanel({ shifts, grandTotal }: TotalsPanelProps) {
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 }

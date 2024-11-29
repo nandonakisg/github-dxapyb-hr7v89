@@ -4,6 +4,7 @@ import { PickerTable } from './components/PickerTable';
 import { CarrierStats } from './components/CarrierStats';
 import { TotalsPanel } from './components/TotalsPanel';
 import { PickTarget } from './components/PickTarget';
+import { StatsCard } from './components/ui/StatsCard';
 import { pickerData, carrierData, totalsData } from './data/mockData';
 
 export default function App() {
@@ -13,20 +14,21 @@ export default function App() {
       <div className="dashboard-content">
         <div className="stats-grid">
           <PickTarget target={164} />
-          <div className="bg-[#1a2332] rounded-xl p-4">
-            <div className="text-base font-medium text-slate-400">Total Lines</div>
-            <div className="text-3xl font-bold text-white mt-1">{totalsData.grandTotal.lines}</div>
-          </div>
-          <div className="bg-[#1a2332] rounded-xl p-4">
-            <div className="text-base font-medium text-slate-400">Average LPH</div>
-            <div className="text-3xl font-bold text-white mt-1">{totalsData.grandTotal.lph}</div>
-          </div>
-          <div className="bg-[#1a2332] rounded-xl p-4">
-            <div className="text-base font-medium text-slate-400">Active Pickers</div>
-            <div className="text-3xl font-bold text-white mt-1">
-              {pickerData.pickers.filter(p => p.active).length}
-            </div>
-          </div>
+          <StatsCard
+            label="Total Lines"
+            value={totalsData.grandTotal.lines}
+            gradient
+          />
+          <StatsCard
+            label="Average LPH"
+            value={totalsData.grandTotal.lph}
+            gradient
+          />
+          <StatsCard
+            label="Active Pickers"
+            value={pickerData.pickers.filter(p => p.active).length}
+            gradient
+          />
         </div>
         
         <div className="main-grid">

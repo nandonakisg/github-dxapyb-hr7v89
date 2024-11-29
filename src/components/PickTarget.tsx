@@ -1,4 +1,5 @@
 import React from 'react';
+import { StatsCard } from './ui/StatsCard';
 
 interface PickTargetProps {
   target: number;
@@ -6,9 +7,10 @@ interface PickTargetProps {
 
 export function PickTarget({ target }: PickTargetProps) {
   return (
-    <div className="bg-[#6366f1] rounded-xl p-4">
-      <div className="text-lg font-medium text-indigo-200">Pick Target</div>
-      <div className="text-4xl font-bold text-white mt-2">{target}</div>
-    </div>
+    <StatsCard
+      label="Pick Target"
+      value={target}
+      className="bg-gradient-to-br from-indigo-600 to-indigo-700"
+    />
   );
 }

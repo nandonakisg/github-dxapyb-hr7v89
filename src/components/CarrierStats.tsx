@@ -1,4 +1,6 @@
 import React from 'react';
+import { Card } from './ui/Card';
+import { CardHeader } from './ui/CardHeader';
 
 interface CarrierData {
   carrier: string;
@@ -16,10 +18,10 @@ interface CarrierStatsProps {
 
 export function CarrierStats({ carriers, grandTotal }: CarrierStatsProps) {
   return (
-    <div className="bg-[#1a2332] rounded-xl overflow-hidden">
-      <div className="p-6 border-b border-[#2a3444]">
+    <Card gradient>
+      <CardHeader>
         <h2 className="text-3xl font-bold text-white">Carrier Status</h2>
-      </div>
+      </CardHeader>
       <div className="overflow-x-auto">
         <table className="data-table">
           <thead>
@@ -45,6 +47,6 @@ export function CarrierStats({ carriers, grandTotal }: CarrierStatsProps) {
           </tbody>
         </table>
       </div>
-    </div>
+    </Card>
   );
 }
