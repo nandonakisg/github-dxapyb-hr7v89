@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 24px;
+  }
+  
+  body {
+    @apply bg-[#0f1623];
+    aspect-ratio: 16/9;
+    overflow: hidden;
+  }
+}
+
+.status-active {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#d1fae5] text-[#065f46];
+}
+
+.status-inactive {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-base font-medium bg-[#fee2e2] text-[#991b1b];
+}
+
+.data-table {
+  @apply w-full border-separate border-spacing-0;
+}
+
+.data-table th {
+  @apply bg-[#1a2332] text-slate-200 px-4 py-2 text-left text-lg font-semibold sticky top-0;
+}
+
+.data-table td {
+  @apply px-4 py-2 text-lg text-slate-200;
+}
+
+.data-table tbody tr {
+  @apply border-b border-[#2a3444];
+}
+
+.data-table tbody tr:hover {
+  @apply bg-[#2a3444]/50;
+}
+
+.data-table tr.grand-total td {
+  @apply text-xl font-bold bg-[#2a3444]/50;
+}
+
+.dashboard-container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
+}
+
+.dashboard-content {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  overflow: hidden;
+}
+
+.table-container {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.table-scroll {
+  overflow-y: auto;
+  flex: 1;
+}

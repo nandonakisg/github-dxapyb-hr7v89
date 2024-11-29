@@ -1,2 +1,3 @@
-# github-dxapyb-hr7v89
-Repository created by Bolt to GitHub extension
+# tv-dashboard
+
+[Edit in StackBlitz next generation editor ⚡️](https://stackblitz.com/~/github.com/nandonakis/tv-dashboard)
