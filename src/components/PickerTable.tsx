@@ -23,11 +23,9 @@ interface PickerTableProps {
 }
 
 export function PickerTable({ pickers, grandTotal }: PickerTableProps) {
-  const visiblePickers = pickers.slice(0, 12); // Show only first 12 pickers
-
   return (
     <Card gradient className="table-container">
-      <CardHeader className="py-4 px-6">
+      <CardHeader className="p-3">
         <h2 className="text-2xl font-bold text-white">Picker Status</h2>
       </CardHeader>
       <div className="table-scroll">
@@ -50,7 +48,7 @@ export function PickerTable({ pickers, grandTotal }: PickerTableProps) {
               <td className="text-right">{formatDecimal(grandTotal.hoursActive)}</td>
               <td className="text-right">-</td>
             </tr>
-            {visiblePickers.map((picker) => (
+            {pickers.map((picker) => (
               <tr key={picker.id}>
                 <td>
                   <span className={picker.active ? 'status-active' : 'status-inactive'}>

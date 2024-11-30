@@ -12,11 +12,11 @@ export function Header() {
   }, []);
 
   return (
-    <div className="bg-[#1a2332] border-b border-[#2a3444] h-[80px] flex items-center px-6">
-      <div className="flex justify-between items-center w-full">
-        <h1 className="text-3xl font-bold text-white">NSW NDC Erskine Park - AMR Picking</h1>
-        <div className="flex items-center gap-3 text-2xl font-medium text-slate-200">
-          <Clock className="h-8 w-8" />
+    <div className="bg-[#1a2332] border-b border-[#2a3444] py-3 px-4">
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold text-white">NSW NDC Erskine Park - AMR Picking</h1>
+        <div className="flex items-center gap-2 text-xl font-medium text-slate-200">
+          <Clock className="h-6 w-6" />
           {currentTime.toLocaleString()}
         </div>
       </div>

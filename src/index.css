@@ -5,17 +5,12 @@
 @layer base {
   html {
     font-size: 24px;
-    height: 100%;
-    background: black;
   }
   
   body {
     @apply bg-[#0f1623];
-    width: 1920px;
-    height: 1080px;
-    margin: 0 auto;
+    aspect-ratio: 16/9;
     overflow: hidden;
-    position: relative;
   }
 }
 
@@ -32,7 +27,7 @@
 }
 
 .data-table th {
-  @apply bg-[#1a2332]/80 text-slate-200 px-4 py-2 text-left text-lg font-semibold backdrop-blur-sm;
+  @apply bg-[#1a2332]/80 text-slate-200 px-4 py-2 text-left text-lg font-semibold sticky top-0 backdrop-blur-sm;
 }
 
 .data-table td {
@@ -40,11 +35,11 @@
 }
 
 .data-table tbody tr {
-  @apply border-b border-[#2a3444];
+  @apply border-b border-[#2a3444] transition-colors duration-150;
 }
 
 .data-table tbody tr:hover {
-  @apply bg-[#2a3444]/50;
+  @apply bg-[#2a3444]/50 backdrop-blur-sm;
 }
 
 .data-table tr.grand-total td {
@@ -52,39 +47,41 @@
 }
 
 .dashboard-container {
-  width: 1920px;
-  height: 1080px;
+  height: 100vh;
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: auto 1fr;
+  overflow: hidden;
 }
 
 .dashboard-content {
+  overflow: hidden;
   display: grid;
-  grid-template-rows: 120px 1fr;
-  gap: 24px;
-  padding: 24px;
+  grid-template-rows: auto 1fr;
+  gap: 1.5rem;
+  padding: 1.5rem;
 }
 
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-  height: 120px;
+  gap: 1.5rem;
 }
 
 .main-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
-  gap: 24px;
-  height: calc(1080px - 280px);
+  gap: 1.5rem;
+  overflow: hidden;
 }
 
 .table-container {
-  display: grid;
-  grid-template-rows: auto 1fr;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .table-scroll {
-  height: 100%;
-  overflow: hidden;
+  overflow-y: auto;
+  flex: 1;
+  @apply scrollbar-thin scrollbar-track-[#1a2332] scrollbar-thumb-[#2a3444] scrollbar-track-rounded-md scrollbar-thumb-rounded-md;
 }
